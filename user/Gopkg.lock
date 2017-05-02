@@ -1,22 +1,22 @@
-memo = ""
+memo = "b505aa7ca9f8cc0f086a40c0a1f349fc38040a59443cde2cb8fe55e73140f077"
 
 [[projects]]
-  branch = "master"
   name = "cloud.google.com/go"
-  packages = ["compute/metadata"]
-  revision = "8790afb57dfdb470da0b1f441c177e6e49ba66e7"
+  packages = ["compute/metadata","internal"]
+  revision = "2e6a95edb1071d750f6d7db777bf66cd2997af6c"
+  version = "v0.7.0"
 
 [[projects]]
   branch = "master"
   name = "github.com/golang/protobuf"
-  packages = ["proto","ptypes/timestamp"]
-  revision = "c9c7427a2a70d2eb3bafa0ab2dc163e45f143317"
+  packages = ["proto","ptypes/any","ptypes/timestamp"]
+  revision = "18c9bb3261723cd5401db4d0c9fbc5c3b6c70fe8"
 
 [[projects]]
   branch = "master"
   name = "github.com/googleapis/gax-go"
   packages = ["."]
-  revision = "8c5154c0fe5bf18cf649634d4c6df50897a32751"
+  revision = "9af46dd5a1713e8b5cd71106287eba3cefdde50b"
 
 [[projects]]
   branch = "master"
@@ -33,13 +33,13 @@ memo = ""
 [[projects]]
   branch = "master"
   name = "github.com/knq/ini"
-  packages = ["."]
+  packages = [".","parser"]
   revision = "668e7f44efb09df98684858a6a72bdf96f7a1685"
 
 [[projects]]
   branch = "master"
   name = "github.com/knq/jwt"
-  packages = ["gserviceaccount","."]
+  packages = [".","bearer","gserviceaccount"]
   revision = "b8acfb9b22cac2bd72f7d7555c46664a5df3d2a6"
 
 [[projects]]
@@ -57,29 +57,41 @@ memo = ""
 [[projects]]
   branch = "master"
   name = "golang.org/x/crypto"
-  packages = ["bcrypt"]
-  revision = "9a6f0a01987842989747adff311d80750ba25530"
+  packages = ["bcrypt","blowfish"]
+  revision = "c7af5bf2638a1164f2eb5467c39c6cffbd13a02e"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/net"
-  packages = ["context","http2","http2/hpack","trace","context/ctxhttp"]
-  revision = "a6577fac2d73be281a500b310739095313165611"
+  packages = ["context","context/ctxhttp","http2","http2/hpack","idna","internal/timeseries","lex/httplex","trace"]
+  revision = "da118f7b8e5954f39d0d2130ab35d4bf0e3cb344"
 
 [[projects]]
   branch = "master"
   name = "golang.org/x/oauth2"
-  packages = [".","google"]
-  revision = "30fcca6531eb4bb278493c9fb299295b3b145934"
+  packages = [".","google","internal","jws","jwt"]
+  revision = "a6bd8cefa1811bd24b86f8902872e4e8225f74c4"
 
 [[projects]]
   branch = "master"
+  name = "golang.org/x/text"
+  packages = ["internal/gen","internal/triegen","internal/ucd","secure/bidirule","transform","unicode/bidi","unicode/cldr","unicode/norm","unicode/rangetable"]
+  revision = "470f45bf29f4147d6fbd7dfd0a02a848e49f5bf4"
+
+[[projects]]
   name = "google.golang.org/appengine"
-  packages = ["urlfetch","."]
-  revision = "3a452f9e00122ead39586d68ffdb9c6e1326af3c"
+  packages = [".","internal","internal/app_identity","internal/base","internal/datastore","internal/log","internal/modules","internal/remote_api","internal/urlfetch","urlfetch"]
+  revision = "150dc57a1b433e64154302bdc40b6bb8aefa313a"
+  version = "v1.0.0"
+
+[[projects]]
+  branch = "master"
+  name = "google.golang.org/genproto"
+  packages = ["googleapis/rpc/status"]
+  revision = "411e09b969b1170a9f0c467558eb4c4c110d9c77"
 
 [[projects]]
   branch = "master"
   name = "google.golang.org/grpc"
-  packages = [".","codes"]
-  revision = "cdee119ee21e61eef7093a41ba148fa83585e143"
+  packages = [".","codes","credentials","grpclb/grpc_lb_v1","grpclog","internal","keepalive","metadata","naming","peer","stats","status","tap","transport"]
+  revision = "0eb507a2ca07f13baf499f89d66cc566bf644643"
