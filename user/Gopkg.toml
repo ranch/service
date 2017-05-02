@@ -9,7 +9,7 @@
 
 [[dependencies]]
   branch = "master"
-  name = "github.com/synoday/synoday"
+  name = "github.com/synoday/golang"
 
 [[dependencies]]
   branch = "master"

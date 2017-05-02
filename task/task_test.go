@@ -8,8 +8,8 @@ import (
 	"golang.org/x/net/context"
 
 	"github.com/knq/firebase"
-	"github.com/synoday/synoday/golang/auth"
-	pb "github.com/synoday/synoday/golang/protogen/task"
+	"github.com/synoday/golang/auth"
+	pb "github.com/synoday/golang/protogen/task"
 )
 
 var testService *Service

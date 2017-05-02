@@ -6,8 +6,8 @@ import (
 	"os"
 	"testing"
 
-	pcreds "github.com/synoday/synoday/golang/protogen/type/creds"
-	pb "github.com/synoday/synoday/golang/protogen/user"
+	pcreds "github.com/synoday/golang/protogen/type/creds"
+	pb "github.com/synoday/golang/protogen/user"
 )
 
 var testService *Service

@@ -15,8 +15,8 @@ import (
 	"golang.org/x/crypto/bcrypt"
 	"golang.org/x/net/context"
 
-	"github.com/synoday/synoday/golang/auth/token"
-	pb "github.com/synoday/synoday/golang/protogen/user"
+	"github.com/synoday/golang/auth/token"
+	pb "github.com/synoday/golang/protogen/user"
 )
 
 var (

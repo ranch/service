@@ -39,7 +39,7 @@ memo = ""
 [[projects]]
   branch = "master"
   name = "github.com/knq/jwt"
-  packages = [".","gserviceaccount"]
+  packages = ["gserviceaccount","."]
   revision = "b8acfb9b22cac2bd72f7d7555c46664a5df3d2a6"
 
 [[projects]]
@@ -50,9 +50,9 @@ memo = ""
 
 [[projects]]
   branch = "master"
-  name = "github.com/synoday/synoday"
-  packages = ["golang/auth","golang/protogen/task"]
-  revision = "9c822234bb0f0257c0c716a4bca5c7fbda1df5fa"
+  name = "github.com/synoday/golang"
+  packages = ["auth","grpc/interceptor","protogen/task"]
+  revision = "2746b3c34e6507e0ccd165a3502960d85713532d"
 
 [[projects]]
   branch = "master"

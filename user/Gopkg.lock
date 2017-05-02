@@ -50,9 +50,9 @@ memo = ""
 
 [[projects]]
   branch = "master"
-  name = "github.com/synoday/synoday"
-  packages = ["golang/auth/token","golang/protogen/type/creds","golang/protogen/user"]
-  revision = "9c822234bb0f0257c0c716a4bca5c7fbda1df5fa"
+  name = "github.com/synoday/golang"
+  packages = ["auth/token","protogen/type/creds","protogen/user"]
+  revision = "2746b3c34e6507e0ccd165a3502960d85713532d"
 
 [[projects]]
   branch = "master"

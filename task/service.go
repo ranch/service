@@ -11,9 +11,10 @@ import (
 	"google.golang.org/grpc"
 
 	"github.com/knq/firebase"
-	"github.com/synoday/synoday/golang/auth"
+	"github.com/synoday/golang/auth"
 
-	pb "github.com/synoday/synoday/golang/protogen/task"
+	"github.com/synoday/golang/grpc/interceptor"
+	pb "github.com/synoday/golang/protogen/task"
 )
 
 // Serve registers task service as gRPC server in specified connection.
@@ -24,7 +25,12 @@ func (s *Service) Serve() {
 		log.Fatalf("failed to listen: %v", err)
 	}
 
-	server := grpc.NewServer()
+	var opts []grpc.ServerOption
+	opts = append(opts, grpc.UnaryInterceptor(
+		interceptor.AuthUnary(),
+	))
+	server := grpc.NewServer(opts...)
+
 	pb.RegisterTaskServiceServer(server, s)
 
 	log.Printf("Task service started on: %s\n", addr)
