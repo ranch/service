@@ -26,7 +26,7 @@ type Service struct {
 	// config is server environment config.
 	config *envcfg.Envcfg
 
-	// dataRef is kudu-data firebase database ref.
+	// dataRef is synoday-data firebase database ref.
 	dataRef *firebase.DatabaseRef
 }
 
