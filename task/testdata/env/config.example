@@ -1,0 +1,8 @@
+; synoday task service test settings
+
+[server]
+port="$PORT||9112"
+
+[firebase]
+authcreds="$FIREBASE_USER_CREDS||./testdata/creds/authcreds.json||file"
+datacreds="$FIREBASE_DATA_CREDS||./testdata/creds/datacreds.json||file"

@@ -1,0 +1,20 @@
+
+[[dependencies]]
+  branch = "master"
+  name = "github.com/knq/envcfg"
+
+[[dependencies]]
+  branch = "master"
+  name = "github.com/knq/firebase"
+
+[[dependencies]]
+  branch = "master"
+  name = "github.com/synoday/synoday"
+
+[[dependencies]]
+  branch = "master"
+  name = "golang.org/x/net"
+
+[[dependencies]]
+  branch = "master"
+  name = "google.golang.org/grpc"

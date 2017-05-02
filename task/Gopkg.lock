@@ -1,0 +1,79 @@
+memo = ""
+
+[[projects]]
+  branch = "master"
+  name = "cloud.google.com/go"
+  packages = ["compute/metadata"]
+  revision = "8790afb57dfdb470da0b1f441c177e6e49ba66e7"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/golang/protobuf"
+  packages = ["proto"]
+  revision = "c9c7427a2a70d2eb3bafa0ab2dc163e45f143317"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/googleapis/gax-go"
+  packages = ["."]
+  revision = "8c5154c0fe5bf18cf649634d4c6df50897a32751"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/knq/envcfg"
+  packages = ["."]
+  revision = "ac4e8e89b6508f0d74617f61de7e68a351cc3896"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/knq/firebase"
+  packages = ["."]
+  revision = "ac317d340ae62f2f32ced3fd6f98f6a0bf9660ac"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/knq/ini"
+  packages = ["."]
+  revision = "668e7f44efb09df98684858a6a72bdf96f7a1685"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/knq/jwt"
+  packages = [".","gserviceaccount"]
+  revision = "b8acfb9b22cac2bd72f7d7555c46664a5df3d2a6"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/knq/pemutil"
+  packages = ["."]
+  revision = "a128105dd4897e4b763d54cb548222f70c4a6622"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/synoday/synoday"
+  packages = ["golang/auth","golang/protogen/task"]
+  revision = "9c822234bb0f0257c0c716a4bca5c7fbda1df5fa"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/net"
+  packages = ["context","http2","http2/hpack","trace","context/ctxhttp"]
+  revision = "a6577fac2d73be281a500b310739095313165611"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/oauth2"
+  packages = [".","google"]
+  revision = "30fcca6531eb4bb278493c9fb299295b3b145934"
+
+[[projects]]
+  branch = "master"
+  name = "google.golang.org/appengine"
+  packages = ["urlfetch","."]
+  revision = "3a452f9e00122ead39586d68ffdb9c6e1326af3c"
+
+[[projects]]
+  branch = "master"
+  name = "google.golang.org/grpc"
+  packages = [".","codes","metadata"]
+  revision = "cdee119ee21e61eef7093a41ba148fa83585e143"

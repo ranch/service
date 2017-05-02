@@ -1,0 +1,12 @@
+; synoday user service test settings
+
+[server]
+port="$PORT||9111"
+
+[jwt]
+privatekey="$JWT_SIGNER_PRIVATE_KEY||./testdata/creds/jwt-signer/ecdsa_private.pem||file"
+publickey="$JWT_SIGNER_PUBLIC_KEY||./testdata/creds/jwt-signer/ecdsa_public.pem||file"
+
+[firebase]
+authcreds="$FIREBASE_USER_CREDS||./testdata/creds/authcreds.json||file"
+datacreds="$FIREBASE_DATA_CREDS||./testdata/creds/datacreds.json||file"
