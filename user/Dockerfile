@@ -10,6 +10,8 @@ WORKDIR /go/src/github.com/synoday/service/user
 
 RUN dep ensure
 
-RUN go install github.com/synoday/service/user
+WORKDIR /go/src/github.com/synoday/service/user/cmd/server
 
-ENTRYPOINT /go/bin/user
+RUN go build -i -o usersvc
+
+ENTRYPOINT ./usersvc

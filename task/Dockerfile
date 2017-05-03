@@ -10,6 +10,8 @@ WORKDIR /go/src/github.com/synoday/service/task
 
 RUN dep ensure
 
-RUN go install github.com/synoday/service/task
+WORKDIR /go/src/github.com/synoday/service/task/cmd/server
 
-ENTRYPOINT /go/bin/task
+RUN go build -i -o tasksvc
+
+ENTRYPOINT ./tasksvc
