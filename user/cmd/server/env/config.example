@@ -1,12 +1,16 @@
 ; synoday user service settings
 
-[server]
-port="$PORT||9111"
-
 [jwt]
-privatekey="$JWT_SIGNER_PRIVATE_KEY||./creds/jwt-signer/ecdsa_private.pem||file"
-publickey="$JWT_SIGNER_PUBLIC_KEY||./creds/jwt-signer/ecdsa_public.pem||file"
+privatekey="$JWT_SIGNER_PRIVATE_KEY||./creds/cert/jwt-key.pem||file"
+publickey="$JWT_SIGNER_PUBLIC_KEY||./creds/cert/jwt.pem||file"
 
 [firebase]
 authcreds="$FIREBASE_USER_CREDS||./creds/authcreds.json||file"
 datacreds="$FIREBASE_DATA_CREDS||./creds/datacreds.json||file"
+
+[tls]
+key="$TLS_KEY||./creds/certs/user-key.pem"
+cert="$TLS_CERT||./creds/certs/user.pem"
+
+[client]
+ca="$TLS_CA||./creds/certs/ca.pem"

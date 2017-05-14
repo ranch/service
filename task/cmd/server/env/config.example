@@ -1,8 +1,12 @@
 ; synoday task service settings
 
-[server]
-port="$PORT||9112"
-
 [firebase]
 authcreds="$FIREBASE_USER_CREDS||./creds/authcreds.json||file"
 datacreds="$FIREBASE_DATA_CREDS||./creds/datacreds.json||file"
+
+[tls]
+key="$TLS_KEY||./creds/certs/task-key.pem"
+cert="$TLS_CERT||./creds/certs/task.pem"
+
+[client]
+ca="$TLS_CA||./creds/certs/ca.pem"

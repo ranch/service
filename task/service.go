@@ -1,7 +1,10 @@
 package task
 
 import (
+	"crypto/tls"
+	"crypto/x509"
 	"fmt"
+	"io/ioutil"
 	"log"
 	"net"
 	"time"
@@ -9,6 +12,7 @@ import (
 	"golang.org/x/net/context"
 
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials"
 
 	"github.com/knq/firebase"
 	"github.com/synoday/golang/auth"
@@ -19,21 +23,51 @@ import (
 
 // Serve registers task service as gRPC server in specified connection.
 func (s *Service) Serve() {
-	addr := fmt.Sprintf("localhost:%d", s.config.GetInt("server.port"))
-	lis, err := net.Listen("tcp", addr)
+
+	// Load the certificates from disk
+	certificate, err := tls.LoadX509KeyPair(
+		s.config.GetString("tls.cert"),
+		s.config.GetString("tls.key"),
+	)
+	if err != nil {
+		log.Fatalf("could not load server key pair: %v", err)
+	}
+
+	// Create a certificate pool from the certificate authority
+	certPool := x509.NewCertPool()
+	ca, err := ioutil.ReadFile(s.config.GetString("client.ca"))
+	if err != nil {
+		log.Fatalf("could not read ca certificate: %s", err)
+	}
+
+	// Append the client certificates from the CA
+	if ok := certPool.AppendCertsFromPEM(ca); !ok {
+		log.Fatal("failed to append client certs")
+	}
+
+	// Create the TLS credentials
+	creds := credentials.NewTLS(&tls.Config{
+		ClientAuth:   tls.RequireAndVerifyClientCert,
+		Certificates: []tls.Certificate{certificate},
+		ClientCAs:    certPool,
+	})
+
+	lis, err := net.Listen("tcp", "dev.synoday.com:9112")
 	if err != nil {
 		log.Fatalf("failed to listen: %v", err)
 	}
 
 	var opts []grpc.ServerOption
-	opts = append(opts, grpc.UnaryInterceptor(
-		interceptor.AuthUnary(),
-	))
+	opts = append(opts,
+		grpc.Creds(creds),
+		grpc.UnaryInterceptor(
+			interceptor.AuthUnary(),
+		))
 	server := grpc.NewServer(opts...)
 
 	pb.RegisterTaskServiceServer(server, s)
 
-	log.Printf("Task service started on: %s\n", addr)
+	log.Printf("Task service started on: %s\n", "dev.synoday.com:9112")
 	server.Serve(lis)
 }
 
