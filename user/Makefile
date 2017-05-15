@@ -8,7 +8,7 @@ build:
 	docker build -t $(TAG) .
 
 run:
-	docker run -d -p 9111:9111 --name=$(NAME) $(TAG)
+	docker run -d -p 9111:80 --name=$(NAME) $(TAG)
 	
 clean:
 	-docker stop $(NAME)
